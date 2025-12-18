@@ -127,14 +127,14 @@
         "format-disconnected": "󱛅 ",
         "format-disabled": "󱚼 ",
         "tooltip-format": "{ifname} via {gwaddr}",
-        "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}\nFreq: 5GHz",
+        "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}\nFreq: {frequency}",
         "tooltip-format-ethernet": "  {ifname}\nIP: {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected",
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
         "on-click": "killall rofi || bash ~/.config/rofi/wifi/wifi.sh"
       },
 
-//// Custom Module {frequency}
+//// Custom Module 
 
 
       "custom/todo":
