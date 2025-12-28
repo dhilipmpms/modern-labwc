@@ -18,51 +18,14 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 ---
 
-## Rofi Applets
-
-### Wallpaper Picker
-
-<table>
-  <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/16c61848-88e1-49f6-bad9-cf69a048f0bc" width="100%" alt="wallselect"></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/99052231-6865-4e05-b5cd-bc62d01ef06a" width="100%" alt="wallselect"></td>
-  </tr>
-</table>
-
-### WiFi Manager
-[WiFi Manager](https://github.com/user-attachments/assets/779cb6fa-7909-4df0-9d58-5d9d525d3b18)
-
-### Now Playing
-[Now Playing](https://github.com/user-attachments/assets/9426fdae-8a95-4335-972e-11dd9aaa1762)
-
-### Screen Tool
-
-<table>
-  <tr>
-    <th>Recording Thumbnail</th>
-    <th>Screenshot Save</th>
-    <th>Screenshot Copied</th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/66757cca-3feb-4080-b832-9972bc87d675" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/b55b5e35-360d-4c1f-aab0-13e88de17074" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/cb97e7fd-4218-48ef-897f-bad77e97939a" width="100%"></td>
-  </tr>
-</table>
-
-[Screen Tool](https://github.com/user-attachments/assets/3ea9bfa6-5348-4d1e-a7a1-1ed885b7a2c6)
-
-### Clipboard Manager
-[Clipboard Manager](https://github.com/user-attachments/assets/bc4f54b8-6bb6-4a74-96db-2ca61d81e915)
-
-### Nightlight
-[Nightlight](https://github.com/user-attachments/assets/11784326-a632-456d-a01c-0ad04f59d83b)
-
----
-
 ## Rofi Launchers
 
 <table>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Rofi Launchers</h6>
+    </td>
+  </tr>  
   <tr>
     <td><img src="https://github.com/user-attachments/assets/2bf01b16-5133-41f9-b02c-1898ad59fef3" width="100%" alt="launcher10"></td>
     <td><img src="https://github.com/user-attachments/assets/6a4b8384-5bb5-4a31-aeb0-497a372ff6d1" width="100%" alt="launcher9"></td>
@@ -87,9 +50,12 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 ---
 
-## Rofi Powermenus
-
 <table>
+  <tr>
+    <td colspan="4" align="center">
+      <h6>Rofi Powermenus</h6>
+    </td>
+  </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/63ef714b-339a-4f24-910f-39063ca9901d" width="100%" alt="pm1"></td>
     <td><img src="https://github.com/user-attachments/assets/34ac5343-d1e8-4dda-bdde-02d18860ed31" width="100%" alt="pm2"></td>
@@ -108,7 +74,106 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 ## Waybar
 
-![theme-change](https://github.com/user-attachments/assets/f5dc93d5-157f-4104-95fb-100fd733ca00)
+<table>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Waybar</h6>
+    </td>
+  </tr>  
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github.com/user-attachments/assets/2e102a45-1da3-4c4f-b076-54c843b11fa9" width="100%" alt="img8">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github.com/user-attachments/assets/68bbf899-7696-4fcd-99e8-7bc6e7bad0ba" width="100%" alt="img7">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github.com/user-attachments/assets/63dab9ef-7b67-40a0-b6a3-b2b6f0a4653d" width="100%" alt="img5">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <video src="https://github.com/user-attachments/assets/e5012ace-2f97-4851-abf2-6c24fcae5005" controls="controls" style="max-width: 100%;"></video>
+    </td>    
+    <td width="50%" align="center">
+      <h6>Change System Theme From Waybar</h6>
+      <img src="https://github.com/user-attachments/assets/f5dc93d5-157f-4104-95fb-100fd733ca00" width="100%" alt="image" />
+    </td>
+  </tr>
+</table>
+
+---
+
+## Rofi Applets
+
+<table>
+ <tr>
+    <td colspan="2" align="center">
+      <h6>Wallpaper Picker</h6>
+    </td>
+  </tr>    
+  <tr>
+    <td align="center"><img src="https://github.com/user-attachments/assets/16c61848-88e1-49f6-bad9-cf69a048f0bc" width="100%" alt="wallselect"></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/99052231-6865-4e05-b5cd-bc62d01ef06a" width="100%" alt="wallselect"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <h6>Rofi WIFI Manager</h6>
+      <video src="https://github.com/user-attachments/assets/779cb6fa-7909-4df0-9d58-5d9d525d3b18" controls="controls" style="max-width: 100%;"></video>
+    </td>
+    <td width="50%" align="center">
+      <h6>Rofi Nowplaying</h6>
+      <video src="https://github.com/user-attachments/assets/9426fdae-8a95-4335-972e-11dd9aaa1762" controls="controls" style="max-width: 100%;"></video>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <h6>Clipboard Manager</h6>
+      <video src="https://github.com/user-attachments/assets/bc4f54b8-6bb6-4a74-96db-2ca61d81e915" controls="controls" style="max-width: 100%;"></video>
+    </td>
+    <td width="50%" align="center">
+      <h6>Nightlight</h6>
+      <video src="https://github.com/user-attachments/assets/11784326-a632-456d-a01c-0ad04f59d83b" controls="controls" style="max-width: 100%;"></video>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td colspan="3" align="center">
+      <h6>Screen Tool</h6>
+    </td>
+  </tr>  
+  <tr>
+    <td align="center">
+      <h6>Recording Thumbnail</h6>
+      <img src="https://github.com/user-attachments/assets/66757cca-3feb-4080-b832-9972bc87d675" width="100%">
+    </td>
+    <td align="center">
+      <h6>Screenshot Save</h6>
+      <img src="https://github.com/user-attachments/assets/b55b5e35-360d-4c1f-aab0-13e88de17074" width="100%">
+    </td>
+    <td align="center">
+      <h6>Screenshot Copied</h6>
+      <img src="https://github.com/user-attachments/assets/cb97e7fd-4218-48ef-897f-bad77e97939a" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <video src="https://github.com/user-attachments/assets/3ea9bfa6-5348-4d1e-a7a1-1ed885b7a2c6" controls="controls" style="max-width: 100%;"></video>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -116,24 +181,41 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 <table>
   <tr>
-    <th>Style 1</th>
-    <th>Style 2</th>
-    <th>Style 3</th>
+    <td colspan="3" align="center">
+      <h6>Hyprlock With Matugen and Dynamic Nowplaying With albumart</h6>
+    </td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/e6592c97-4b73-4ba6-b290-90bb89f1ea1a" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/149852f6-8d9d-48c9-96e3-7c30679cdeff" width="100%"></td>
-    <td><img src="https://github.com/user-attachments/assets/3a1703ad-452f-4916-82de-a3a83e154cf9" width="100%"></td>
+    <td align="center">
+      <h6>Nothing Playing Clean Look</h6>
+      <img src="https://github.com/user-attachments/assets/67d58c10-5324-4365-922c-0da4bb15f6e0" width="100%">
+    </td>    
+    <td align="center">
+      <h6>Lock Screen With Albumart</h6>
+      <img src="https://github.com/user-attachments/assets/e6592c97-4b73-4ba6-b290-90bb89f1ea1a" width="100%">
+    </td>
+    <td align="center">
+      <h6>Fallback Albumart</h6>
+      <img src="https://github.com/user-attachments/assets/c2702797-a553-47f3-924f-ed50e172f966" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <video src="https://github.com/user-attachments/assets/e68fd9ec-675a-49fa-8df6-c1aab044256a" controls="controls" style="max-width: 100%;"></video>
+    </td>
   </tr>
 </table>
-
-[Hyprlock](https://github.com/user-attachments/assets/e68fd9ec-675a-49fa-8df6-c1aab044256a)
 
 ---
 
 ## Mpv
 
 <table>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Mpv With Matugen And Modern Look</h6>
+    </td>
+  </tr>  
   <tr>
     <td><img src="https://github.com/user-attachments/assets/9c7bc7a5-6ce6-4128-b1b8-5a46e94de633" width="100%" alt="mpv2"></td>
     <td><img src="https://github.com/user-attachments/assets/eef3d42f-9b0f-47c1-aced-c4af8e262c44" width="100%" alt="mpv1"></td>
@@ -159,6 +241,7 @@ chmod +x setup.sh
 4. Copy `matugen-labwc` theme folder to `~/.themes`.
 
 ---
+
 
 ## Dependencies
 
