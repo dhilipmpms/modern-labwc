@@ -8,13 +8,44 @@ A ready to use configuration for **Labwc** wayland compositor with 19 preconfigu
 
 - **Preconfigured Themes** - Preconfigured color schemes for labwc, GTK3, GTK4, Rofi, and waybar.
 - **Wallpaper-Based Color Generation** - Generate themes from wallpapers using Matugen.
-- **Rofi Applets** - Utility applets (wallpaper picker, WiFi, now playing, etc.).
+- **Rofi Applets** - Useful Rofi Applets
+- **Audio Feedback** - Plays audio on system login and hardware changes.
+- **Dynamic Desktop Menu** - A Python-based menu generator that builds beautiful, icon-rich `labwc` root menus with optional custom headers.
+- **Idle Management** - Manage screen dimming, locking and device suspension.
+- **Immersive Hyprlock** - Matugen-themed lockscreen with 'Now Playing' album art and direct wallpaper background rendering (not simple screenshot).
+- **Wallpaper Picker On Steroids** - Handles both images and GIFs. It toggles system theme (dark/light) based on generated color scheme, extracts GIF frame for lockscreen consistency, and analyzes wallpaper brightness to generate readable text colors for Hyprlock.
+
+   **And many more.....**
+
 
 ---
 
 ## 🎨 Preconfigured Themes (20 Total)
 
-Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest Light, Solarized Dark, Solarized, Lavender Pastel, Arc, Adapta, Black, Navy, Lovelace, Paper, Cyberpunk, Yousai, and Wallpaper-based.
+<table>
+  <tr>
+    <td align="center">
+      <h5>Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest Light, Solarized Dark, Solarized, Lavender Pastel, Arc, Adapta, Black, Navy, Lovelace, Paper, Cyberpunk, Yousai, and Wallpaper-based.</h5>
+    </td>
+  </tr>
+<tr>
+ <td><img src="https://github.com/user-attachments/assets/a090d01a-e89e-41d9-8d57-ef9db4a2b344" width="100%" alt="launcher10"></td>
+</tr>
+</table>
+
+---
+
+<table>
+  <tr>
+    <td colspan="2" align="center">
+      <h5>Beautiful Labwc Root Menu</h5>
+    </td>
+  </tr>  
+  <tr>
+    <td><h6>Without Header</h6><img src="https://github.com/user-attachments/assets/9fe692af-6d6e-41d6-9a1f-a671377cd811" width="100%" alt="launcher10"></td>
+    <td><h6>With Header</h6><img src="https://github.com/user-attachments/assets/e0e9d20a-c171-4701-b7f6-268b733ec2ab" width="100%" alt="launcher9"></td>
+  </tr>
+</table>
 
 ---
 
@@ -52,19 +83,23 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 <table>
   <tr>
-    <td colspan="4" align="center">
+    <td colspan="2" align="center">
       <h6>Rofi Powermenus</h6>
     </td>
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/63ef714b-339a-4f24-910f-39063ca9901d" width="100%" alt="pm1"></td>
     <td><img src="https://github.com/user-attachments/assets/34ac5343-d1e8-4dda-bdde-02d18860ed31" width="100%" alt="pm2"></td>
+  </tr>
+  <tr>
     <td><img src="https://github.com/user-attachments/assets/8d234137-a551-4b79-af26-25aa4ab5994f" width="100%" alt="pm3"></td>
     <td><img src="https://github.com/user-attachments/assets/e208c391-66ae-493b-a4b4-00c7b833b0ab" width="100%" alt="pm4"></td>
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/6fa0ef70-9857-47ef-adc7-459a801e5bfb" width="100%" alt="pm5"></td>
     <td><img src="https://github.com/user-attachments/assets/81155fec-a7a5-4e71-b697-39b0a3f4df45" width="100%" alt="pm6"></td>
+  </tr>
+  <tr>
     <td><img src="https://github.com/user-attachments/assets/e47197f3-04be-43bd-afeb-6eeba9570435" width="100%" alt="pm7"></td>
     <td><img src="https://github.com/user-attachments/assets/36122913-484f-4e04-bad0-1a1a7c7dd98a" width="100%" alt="pm8"></td>
   </tr>
@@ -74,29 +109,46 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 
 ## Waybar
 
-<table>
+<table> 
   <tr>
     <td colspan="2" align="center">
-      <h6>Waybar</h6>
-    </td>
-  </tr>  
-  <tr>
-    <td colspan="2" align="center">
-      <img src="https://github.com/user-attachments/assets/2e102a45-1da3-4c4f-b076-54c843b11fa9" width="100%" alt="img8">
+      <h6>Caps Lock ON</h6>
+      <img src="https://github.com/user-attachments/assets/e6bc5bef-359c-4715-9b87-25700bf36e1b" width="100%" alt="Caps Lock ON">
     </td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="https://github.com/user-attachments/assets/68bbf899-7696-4fcd-99e8-7bc6e7bad0ba" width="100%" alt="img7">
+      <h6>Compact Pill</h6>
+      <img src="https://github.com/user-attachments/assets/08f4fb75-5470-4e34-bec7-500449e2a385" width="100%" alt="Compact Pill">
     </td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="https://github.com/user-attachments/assets/63dab9ef-7b67-40a0-b6a3-b2b6f0a4653d" width="100%" alt="img5">
+      <h6>Pill</h6>
+      <img src="https://github.com/user-attachments/assets/dde66362-c0cd-439f-b22d-8cd5c82e9a1a" width="100%" alt="Pill">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Square</h6>
+      <img src="https://github.com/user-attachments/assets/1609929a-9d09-4e9b-a393-710ffda6c7d1" width="100%" alt="Square">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Outline</h6>
+      <img src="https://github.com/user-attachments/assets/54131236-9d1f-403c-8219-0d684e591809" width="100%" alt="Outline">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <h6>Standard</h6>
+      <img src="https://github.com/user-attachments/assets/46bb7698-7cdb-4043-982b-e20f61240b6a" width="100%" alt="Standard">
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
+      <h6>Waybar Customization</h6>      
       <video src="https://github.com/user-attachments/assets/e5012ace-2f97-4851-abf2-6c24fcae5005" controls="controls" style="max-width: 100%;"></video>
     </td>    
     <td width="50%" align="center">
@@ -105,6 +157,8 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
     </td>
   </tr>
 </table>
+
+
 
 ---
 
@@ -138,11 +192,11 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 <table>
   <tr>
     <td width="50%" align="center">
-      <h6>Clipboard Manager</h6>
+      <h6>Rofi Clipboard Manager</h6>
       <video src="https://github.com/user-attachments/assets/bc4f54b8-6bb6-4a74-96db-2ca61d81e915" controls="controls" style="max-width: 100%;"></video>
     </td>
     <td width="50%" align="center">
-      <h6>Nightlight</h6>
+      <h6>Rofi Nightlight</h6>
       <video src="https://github.com/user-attachments/assets/11784326-a632-456d-a01c-0ad04f59d83b" controls="controls" style="max-width: 100%;"></video>
     </td>
   </tr>
@@ -151,7 +205,7 @@ Tokyo Night, Onedark, Dracula, Catppuccin, Gruvbox, Nord, Everforest, Everforest
 <table>
   <tr>
     <td colspan="3" align="center">
-      <h6>Screen Tool</h6>
+      <h6>Rofi Screen Tool</h6>
     </td>
   </tr>  
   <tr>
@@ -253,4 +307,18 @@ chmod +x setup.sh
 
 ---
 
-**Enjoy your beautifully themed Labwc desktop!**
+## 🤝 Contributing
+
+I am happy to collaborate! Feel free to contribute to this project in any way you can.
+Whether it's fixing a bug, adding a new feature, or even a small change like enhancing README, every contribution matters and is highly appreciated.
+
+**Enjoy your beautifully themed Labwc desktop! 🎉**
+
+
+
+## Credits
+
+Rofi launcher and powermenu [adi1090x](https://github.com/adi1090x)
+
+Matugen [InioX](https://github.com/InioX)
+
