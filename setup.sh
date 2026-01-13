@@ -43,6 +43,10 @@ dependencies=(
     "nm-connection-editor"
     "polkit-gnome"
     "gnome-keyring"
+    "wf-recorder"
+    "grim"
+    "slurp"
+    "playerctl"
     # Fonts & Themes
     "otf-font-awesome"
     "inter-font"
