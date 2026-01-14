@@ -182,6 +182,15 @@ else
 fi
 
 echo ""
+echo -e "${blue}[STEP 6/6] Restoring GNOME settings...${nc}"
+sleep 0.5
+
+# Restore old icon theme
+echo -e "${yellow}Restoring icon theme to Yaru...${nc}"
+gsettings set org.gnome.desktop.interface icon-theme 'Yaru'
+echo -e "${green}✓ Icon theme restored${nc}"
+
+echo ""
 echo -e "${green}╔════════════════════════════════════════════════════════════╗${nc}"
 echo -e "${green}║              Revert Complete!                              ║${nc}"
 echo -e "${green}╚════════════════════════════════════════════════════════════╝${nc}"

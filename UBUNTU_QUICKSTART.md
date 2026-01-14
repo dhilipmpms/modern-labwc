@@ -13,7 +13,7 @@ Before running the setup script, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Harsh-bin/modern-labwc/
+git clone https://github.com/dhilipmpms/modern-labwc.git
 cd modern-labwc
 ```
 
