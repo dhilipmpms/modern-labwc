@@ -182,6 +182,7 @@ build_hyprlock() {
 }
 
 # Build swww
+# Build swww
 build_swww() {
     echo -e "${yellow}[6/7] Building swww...${nc}"
     
@@ -190,9 +191,22 @@ build_swww() {
         return
     fi
     
+    # Install dependencies for swww
+    sudo apt-get install -y liblz4-dev >> "$LOG_FILE" 2>&1
+
     source "$HOME/.cargo/env"
-    log "Installing swww via cargo..."
-    cargo install swww >> "$LOG_FILE" 2>&1
+    
+    cd "$BUILD_DIR"
+    log "Cloning swww repository..."
+    git clone https://github.com/LGFae/swww.git >> "$LOG_FILE" 2>&1
+    cd swww
+    
+    log "Building swww..."
+    cargo build --release >> "$LOG_FILE" 2>&1
+    
+    # Install binaries
+    sudo cp target/release/swww /usr/local/bin/
+    sudo cp target/release/swww-daemon /usr/local/bin/
     
     echo -e "${green}✓ swww installed${nc}"
 }
@@ -208,7 +222,7 @@ install_cliphist() {
     fi
     
     log "Downloading cliphist binary from GitHub releases..."
-    CLIPHIST_URL="https://github.com/sentriz/cliphist/releases/download/v0.6.0/v0.6.0-linux-amd64"
+    CLIPHIST_URL="https://github.com/sentriz/cliphist/releases/download/v0.7.0/v0.7.0-linux-amd64"
     
     curl -L "$CLIPHIST_URL" -o "$BUILD_DIR/cliphist" >> "$LOG_FILE" 2>&1
     chmod +x "$BUILD_DIR/cliphist"
