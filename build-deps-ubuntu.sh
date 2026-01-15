@@ -231,6 +231,30 @@ install_cliphist() {
     echo -e "${green}✓ cliphist installed${nc}"
 }
 
+# Install adw-gtk3 theme from GitHub releases
+install_adw_gtk3() {
+    echo -e "${yellow}[8/8] Installing adw-gtk3 theme...${nc}"
+    
+    THEME_DIR="$HOME/.local/share/themes"
+    mkdir -p "$THEME_DIR"
+    
+    if [ -d "$THEME_DIR/adw-gtk3" ] && [ -d "$THEME_DIR/adw-gtk3-dark" ]; then
+        echo -e "${green}✓ adw-gtk3 theme already installed${nc}"
+        return
+    fi
+    
+    log "Downloading adw-gtk3 theme from GitHub releases..."
+    ADW_VERSION=$(curl -s https://api.github.com/repos/lassekongo83/adw-gtk3/releases/latest | grep '"tag_name"' | sed -E 's/.*"v([^"]+)".*/\1/')
+    ADW_URL="https://github.com/lassekongo83/adw-gtk3/releases/download/v${ADW_VERSION}/adw-gtk3v${ADW_VERSION}.tar.xz"
+    
+    curl -L "$ADW_URL" -o "$BUILD_DIR/adw-gtk3.tar.xz" >> "$LOG_FILE" 2>&1
+    
+    log "Extracting adw-gtk3 theme..."
+    tar -xf "$BUILD_DIR/adw-gtk3.tar.xz" -C "$THEME_DIR" >> "$LOG_FILE" 2>&1
+    
+    echo -e "${green}✓ adw-gtk3 theme installed${nc}"
+}
+
 # Main execution
 main() {
     echo -e "${blue}This will build and install packages not available in Ubuntu repositories.${nc}"
@@ -250,6 +274,7 @@ main() {
     build_hyprlock
     build_swww
     install_cliphist
+    install_adw_gtk3
     
     echo ""
     echo -e "${green}╔════════════════════════════════════════════════════════════╗${nc}"

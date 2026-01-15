@@ -105,7 +105,7 @@ declare -A debian_packages=(
     ["inter-font"]="fonts-inter"
     ["roboto-font"]="fonts-roboto"
     ["papirus-icon-theme"]="papirus-icon-theme"
-    ["adw-gtk-theme"]="gnome-themes-extra"
+    ["adw-gtk-theme"]="BUILD"  # Not in repos
 )
 
 # Get package list based on distribution

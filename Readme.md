@@ -292,12 +292,11 @@ chmod +x setup.sh
 ```
 
 The script will:
-- ✅ Auto-detect your distribution
-- ✅ Install available packages from your repos
-- ✅ Build missing packages from source (Ubuntu/Debian)
-- ✅ Deploy all configurations
-- ✅ Install fonts and themes
-- ✅ Set up your desktop environment
+- ✅ **Auto-detect** your distribution
+- ✅ **Install** available packages (supports **Arch**, **Ubuntu**, **Debian**)
+- ✅ **Build/Download** missing packages automatically (LabWC via PPA on Ubuntu, Matugen/Cliphist binaries)
+- ✅ **Deploy** all configurations, fonts, and themes
+- ✅ **Set up** your desktop environment
 
 ---
 
@@ -307,21 +306,16 @@ The script will:
 All packages are available in official repositories or AUR. Installation is quick and straightforward.
 
 #### **Ubuntu 24.04 / Debian**
-Some packages need to be built from source:
-- `labwc` - Main compositor
-- `matugen` - Color scheme generator (installed via Cargo)
-- `hyprlock` - Screen locker
-- `swww` - Wallpaper daemon (installed via Cargo)
-- `cliphist` - Clipboard manager
+The setup script detects your OS and handles dependencies automatically:
+- **LabWC**: Installed via **official PPA** on Ubuntu (compiled from source on Debian).
+- **Binaries**: **Matugen**, **Cliphist**, and **adw-gtk3** are downloaded from GitHub releases (no compilation needed).
+- **Source Builds**: **Hyprlock** and **Swww** are automatically compiled from source.
 
 **Build Requirements:**
-- Rust/Cargo (for matugen and swww)
-- Build tools (build-essential, meson, cmake)
-- Development libraries (automatically installed)
+- Rust/Cargo (only for swww/hyprlock)
+- Essential build tools (automatically installed)
 
-**Estimated Build Time:** 15-30 minutes
-
-The setup script will prompt you to build these packages automatically.
+The script handles all of this for you!
 
 ---
 
@@ -378,14 +372,15 @@ sudo apt-get install waybar rofi dunst swayidle foot wl-clipboard \
   fonts-roboto papirus-icon-theme gnome-themes-extra
 ```
 
-**Needs Building from Source:**
-- **labwc** - [Build Instructions](https://github.com/labwc/labwc)
-- **matugen** - `cargo install matugen` (requires Rust)
-- **hyprlock** - [Build Instructions](https://github.com/hyprwm/hyprlock)
-- **swww** - `cargo install swww` (requires Rust)
-- **cliphist** - [Build Instructions](https://github.com/sentriz/cliphist)
+**Needs Building/Manual Install:**
+- **labwc** - PPA (Ubuntu) or Source (Debian)
+- **matugen** - GitHub Binary
+- **cliphist** - GitHub Binary
+- **adw-gtk3** - GitHub Release
+- **hyprlock** - Built from source
+- **swww** - Built from source
 
-> **💡 Tip:** The `./setup.sh` script includes a `build-deps-ubuntu.sh` that automates building all these packages!
+> **💡 Tip:** The `./setup.sh` script automates ALL of this via `build-deps-ubuntu.sh`. You don't need to do anything manually!
 
 ---
 
@@ -456,6 +451,26 @@ python3 ~/.config/labwc/menu-generator.py -f false -o ~/.config/labwc/menu.xml
 # Reload labwc to see changes:
 labwc --reconfigure
 ```
+
+## 🔄 Revert Changes
+
+To uninstall or revert changes, simply remove the configuration folders and packages.
+
+**1. Remove Configs:**
+```bash
+rm -rf ~/.config/labwc ~/.config/waybar ~/.config/rofi ~/.config/dunst \
+       ~/.config/foot ~/.config/hypr
+```
+
+**2. Remove Themes & Fonts:**
+```bash
+rm -rf ~/.themes/matugen-labwc ~/.themes/adw-gtk3*
+rm -rf ~/.local/share/fonts/Iosevka* ~/.local/share/fonts/JetBrainsMono*
+```
+
+**3. Uninstall Packages:**
+- **Arch:** `sudo pacman -Rns labwc waybar rofi dunst foot swww hyprlock matugen`
+- **Ubuntu/Debian:** `sudo apt remove labwc waybar rofi dunst foot` (Manually remove binary installs like swww, hybrids, matugen from `/usr/local/bin`)
 
 ---
 
