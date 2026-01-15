@@ -43,11 +43,17 @@ install_build_deps() {
     echo -e "${yellow}[1/7] Installing build dependencies...${nc}"
     
     BUILD_DEPS=(
+        # Build tools
         "build-essential"
         "meson"
         "ninja-build"
         "cmake"
         "pkg-config"
+        "git"
+        "curl"
+        "wget"
+        
+        # labwc dependencies
         "libwayland-dev"
         "wayland-protocols"
         "libwlroots-dev"
@@ -62,9 +68,11 @@ install_build_deps() {
         "libjson-c-dev"
         "libseat-dev"
         "scdoc"
-        "git"
-        "curl"
-        "wget"
+        
+        # hyprlock dependencies
+        "libpam0g-dev"
+        "libmagic-dev"
+        "libhyprlang-dev"
     )
     
     sudo apt-get update
@@ -78,7 +86,7 @@ install_build_deps() {
     echo -e "${green}✓ Build dependencies installed${nc}"
 }
 
-# Install Rust and Cargo for matugen
+# Install Rust and Cargo for swww
 install_rust() {
     echo -e "${yellow}[2/7] Checking Rust installation...${nc}"
     
@@ -101,6 +109,23 @@ build_labwc() {
         return
     fi
     
+    # Check if running on Ubuntu to use PPA
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        if [ "$ID" = "ubuntu" ]; then
+            log "Detected Ubuntu system. Installing labwc from PPA..."
+            echo -e "${yellow}Adding labwc PPA...${nc}"
+            sudo add-apt-repository -y ppa:labwc-contributors/labwc >> "$LOG_FILE" 2>&1
+            sudo apt-get update >> "$LOG_FILE" 2>&1
+            sudo apt-get install -y labwc >> "$LOG_FILE" 2>&1
+            
+            echo -e "${green}✓ labwc installed via PPA${nc}"
+            return
+        fi
+    fi
+
+    # Fallback to building from source (Debian / others)
+    log "Building labwc from source (Debian/Other)..."
     cd "$BUILD_DIR"
     log "Cloning labwc repository..."
     git clone https://github.com/labwc/labwc.git >> "$LOG_FILE" 2>&1
@@ -114,7 +139,7 @@ build_labwc() {
     echo -e "${green}✓ labwc built and installed${nc}"
 }
 
-# Install matugen via cargo
+# Install matugen binary from GitHub releases
 install_matugen() {
     echo -e "${yellow}[4/7] Installing matugen...${nc}"
     
@@ -123,9 +148,13 @@ install_matugen() {
         return
     fi
     
-    source "$HOME/.cargo/env"
-    log "Installing matugen via cargo..."
-    cargo install matugen >> "$LOG_FILE" 2>&1
+    log "Downloading matugen binary from GitHub releases..."
+    MATUGEN_VERSION=$(curl -s https://api.github.com/repos/InioX/matugen/releases/latest | grep '"tag_name"' | sed -E 's/.*"v([^"]+)".*/\1/')
+    MATUGEN_URL="https://github.com/InioX/matugen/releases/download/v${MATUGEN_VERSION}/matugen-linux-x86_64"
+    
+    curl -L "$MATUGEN_URL" -o "$BUILD_DIR/matugen" >> "$LOG_FILE" 2>&1
+    chmod +x "$BUILD_DIR/matugen"
+    sudo mv "$BUILD_DIR/matugen" /usr/local/bin/matugen
     
     echo -e "${green}✓ matugen installed${nc}"
 }
@@ -138,9 +167,6 @@ build_hyprlock() {
         echo -e "${green}✓ hyprlock already installed${nc}"
         return
     fi
-    
-    # Install additional dependencies for hyprlock
-    sudo apt-get install -y libpam0g-dev libmagic-dev libhyprlang-dev >> "$LOG_FILE" 2>&1
     
     cd "$BUILD_DIR"
     log "Cloning hyprlock repository..."
@@ -172,30 +198,23 @@ build_swww() {
 }
 
 # Build cliphist
-build_cliphist() {
-    echo -e "${yellow}[7/7] Building cliphist...${nc}"
+# Install cliphist binary from GitHub releases
+install_cliphist() {
+    echo -e "${yellow}[7/7] Installing cliphist...${nc}"
     
     if command_exists cliphist; then
         echo -e "${green}✓ cliphist already installed${nc}"
         return
     fi
     
-    # Install Go if needed
-    if ! command_exists go; then
-        log "Installing Go..."
-        sudo apt-get install -y golang-go >> "$LOG_FILE" 2>&1
-    fi
+    log "Downloading cliphist binary from GitHub releases..."
+    CLIPHIST_URL="https://github.com/sentriz/cliphist/releases/download/v0.6.0/v0.6.0-linux-amd64"
     
-    cd "$BUILD_DIR"
-    log "Cloning cliphist repository..."
-    git clone https://github.com/sentriz/cliphist.git >> "$LOG_FILE" 2>&1
-    cd cliphist
+    curl -L "$CLIPHIST_URL" -o "$BUILD_DIR/cliphist" >> "$LOG_FILE" 2>&1
+    chmod +x "$BUILD_DIR/cliphist"
+    sudo mv "$BUILD_DIR/cliphist" /usr/local/bin/cliphist
     
-    log "Building cliphist..."
-    go build >> "$LOG_FILE" 2>&1
-    sudo install -Dm755 cliphist /usr/local/bin/cliphist >> "$LOG_FILE" 2>&1
-    
-    echo -e "${green}✓ cliphist built and installed${nc}"
+    echo -e "${green}✓ cliphist installed${nc}"
 }
 
 # Main execution
@@ -216,7 +235,7 @@ main() {
     install_matugen
     build_hyprlock
     build_swww
-    build_cliphist
+    install_cliphist
     
     echo ""
     echo -e "${green}╔════════════════════════════════════════════════════════════╗${nc}"
