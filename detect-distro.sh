@@ -41,13 +41,7 @@ determine_package_manager() {
             CHECK_CMD="dpkg -l"
             UPDATE_CMD="sudo apt-get update"
             ;;
-        fedora|rhel|centos|rocky|almalinux)
-            DISTRO_FAMILY="fedora"
-            PKG_MANAGER="dnf"
-            INSTALL_CMD="sudo dnf install -y"
-            CHECK_CMD="rpm -q"
-            UPDATE_CMD="sudo dnf check-update"
-            ;;
+
         *)
             # Check ID_LIKE for derivative distributions
             if [[ "$DISTRO_ID_LIKE" == *"arch"* ]]; then
@@ -62,15 +56,9 @@ determine_package_manager() {
                 INSTALL_CMD="sudo apt-get install -y"
                 CHECK_CMD="dpkg -l"
                 UPDATE_CMD="sudo apt-get update"
-            elif [[ "$DISTRO_ID_LIKE" == *"fedora"* ]] || [[ "$DISTRO_ID_LIKE" == *"rhel"* ]]; then
-                DISTRO_FAMILY="fedora"
-                PKG_MANAGER="dnf"
-                INSTALL_CMD="sudo dnf install -y"
-                CHECK_CMD="rpm -q"
-                UPDATE_CMD="sudo dnf check-update"
             else
                 echo -e "${red}Error: Unsupported distribution: $DISTRO_ID${nc}"
-                echo -e "${yellow}Supported distributions: Arch, Ubuntu, Debian, Fedora and their derivatives${nc}"
+                echo -e "${yellow}Supported distributions: Arch, Ubuntu, Debian and their derivatives${nc}"
                 exit 1
             fi
             ;;
